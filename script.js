@@ -1,10 +1,11 @@
 function formatDoc(cmd, value = null) {
-    if (value) {
+    if (cmd === 'fontSize' || cmd === 'foreColor') {
         document.execCommand(cmd, false, value);
     } else {
         document.execCommand(cmd);
     }
 }
+
 
 function createTextBox() {
     const textBox = document.createElement('div');

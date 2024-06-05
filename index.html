@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Text Editor</title>
+</head>
+<body>
+    <div class="container">
+        <div id="content" contenteditable="true" spellcheck="false"></div>
+        <div class="toolbar">
+            <div class="head">
+                <select onchange="formatDoc('fontSize', this.value); this.selectedIndex=0;">
+                    <option value="" selected="" hidden="" disabled="">Font</option>
+                    <option value="1">Extra small</option>
+                    <option value="2">Small</option>
+                    <option value="3">Regular</option>
+                    <option value="4">Medium</option>
+                    <option value="5">Large</option>
+                    <option value="6">Extra Large</option>
+                    <option value="7">Big</option>
+                </select>
+                <div class="color">
+                    <span>Color</span>
+                    <input type="color" oninput="formatDoc('foreColor', this.value); this.value='#000000';">
+                </div>
+            </div>
+            <div class="btn-toolbar">
+                <button onclick="formatDoc('undo')"><i class='bx bx-undo'></i></button>
+                <button onclick="formatDoc('redo')"><i class='bx bx-redo'></i></button>
+                <button onclick="createTextBox()"><i class='bx bx-text'></i> Text Box</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
